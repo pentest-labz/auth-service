@@ -33,6 +33,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 app = FastAPI()
 origins = [
     "http://localhost:4000",
+    "http://localhost:5002",
     "http://localhost:8000",
     "http://localhost:8001",
     "http://localhost:8002",
