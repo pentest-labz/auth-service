@@ -34,7 +34,7 @@ pipeline {
                 script {
                     docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
                         dockerImage.push("${env.BRANCH_NAME}")
-                        if (env.BRANCH_NAME == 'main') {
+                        if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') {
                             dockerImage.push('latest')
                         }
                     }
