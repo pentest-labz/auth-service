@@ -107,6 +107,10 @@ async def login(form: OAuth2PasswordRequestForm = Depends()):
 async def health():
     return {"status": "ok"}
 
+@app.get("/healthz")
+async def health():
+    return {"status": "ok"}
+
 @app.get("/users/me")
 async def read_users_me(current_user: dict = Depends(get_current_user)):
     return {"username": current_user["username"]}
